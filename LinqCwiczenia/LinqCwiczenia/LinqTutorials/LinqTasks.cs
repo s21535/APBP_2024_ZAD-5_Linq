@@ -293,7 +293,12 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<object> Task10()
         {
-            IEnumerable<object> result = null;
+            IEnumerable<object> result = Emps
+                .Select(e => new {e.Ename, e.Job, e.HireDate})
+                .Union(Emps.Select(e => new {e.Ename, e.Job, e.HireDate}))
+                .Where(e => e.Ename == "Brak wartości" && e.Job == null && e.HireDate == null)
+                .ToList();
+                
             return result;
         }
 

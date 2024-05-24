@@ -11,7 +11,7 @@ namespace LinqTutorials
             Console.WriteLine("-----------------------------");
 
             int count = 1;
-            foreach (var element in LinqTasks.Task7())
+            foreach (var element in LinqTasks.Task10())
             {
                 Console.WriteLine(count + ": " + element);
                 count++;
