@@ -6,7 +6,8 @@ namespace LinqTutorials
     {
         static void Main(string[] args)
         {
-            var t = LinqTasks.Task1();
+            
+            Console.WriteLine("Boolean: " + LinqTasks.Task8());
 
             int count = 1;
             foreach (var element in LinqTasks.Task7())
