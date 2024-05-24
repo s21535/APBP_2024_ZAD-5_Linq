@@ -238,7 +238,12 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<object> Task6()
         {
-            IEnumerable<object> result = null;
+            IEnumerable<object> result = Emps.Join(Depts,
+                    e => e.Deptno,
+                    d => d.Deptno,
+                    (e,d) => new {employee = e, department = d})
+                .Select(e => new {e.employee.Ename, e.employee.Job, e.department.Dname})
+                .ToList();
             return result;
         }
 
